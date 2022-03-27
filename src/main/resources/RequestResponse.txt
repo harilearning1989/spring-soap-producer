@@ -1,0 +1,102 @@
+Request for Creation
+
+<soapenv:Envelope
+xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+xmlns:art="http://www.web.com/demo/soap">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <art:addArticleRequest>
+         <art:title>Angular Tutorial</art:title>
+         <art:category>Angular</art:category>
+      </art:addArticleRequest>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+------------------------------------------------------------
+Response
+
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+<SOAP-ENV:Header/>
+<SOAP-ENV:Body>
+<ns2:addArticleResponse xmlns:ns2="http://www.web.com/demo/soap">
+<ns2:serviceStatus>
+<ns2:statusCode>SUCCESS</ns2:statusCode>
+<ns2:message>Content Added Successfully</ns2:message>
+</ns2:serviceStatus>
+<ns2:articleInfo>
+<ns2:articleId>1</ns2:articleId>
+<ns2:title>Angular Tutorial</ns2:title>
+<ns2:category>Angular</ns2:category>
+</ns2:articleInfo></ns2:addArticleResponse>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+==================================================================
+List the request
+
+<soapenv:Envelope
+xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+xmlns:art="http://www.web.com/demo/soap">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <art:getAllArticlesRequest/>
+   </soapenv:Body>
+</soapenv:Envelope>
+------------------------------------------------------------------
+Response
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+   <SOAP-ENV:Header/>
+   <SOAP-ENV:Body>
+      <ns2:getAllArticlesResponse xmlns:ns2="http://www.web.com/demo/soap">
+         <ns2:articleInfo>
+            <ns2:articleId>1</ns2:articleId>
+            <ns2:title>Angular Tutorial</ns2:title>
+            <ns2:category>Angular</ns2:category>
+         </ns2:articleInfo>
+      </ns2:getAllArticlesResponse>
+   </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+==========================================
+
+Update the request
+
+<soapenv:Envelope
+xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+xmlns:art="http://www.web.com/demo/soap">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <art:updateArticleRequest>
+         <art:articleInfo>
+            <art:articleId>2</art:articleId>
+            <art:title>Update: Spring Boot Getting Started</art:title>
+            <art:category>Update: Spring Boot</art:category>
+         </art:articleInfo>
+      </art:updateArticleRequest>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+Response
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+   <SOAP-ENV:Header/>
+   <SOAP-ENV:Body>
+      <ns2:updateArticleResponse xmlns:ns2="http://www.web.com/demo/soap">
+         <ns2:serviceStatus>
+            <ns2:statusCode>SUCCESS</ns2:statusCode>
+            <ns2:message>Content Updated Successfully</ns2:message>
+         </ns2:serviceStatus>
+      </ns2:updateArticleResponse>
+   </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+========================================================
+Delete
+<soapenv:Envelope
+xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+xmlns:art="http://www.web.com/demo/soap">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <art:deleteArticleRequest>
+         <art:articleId>1</art:articleId>
+      </art:deleteArticleRequest>
+   </soapenv:Body>
+</soapenv:Envelope>
