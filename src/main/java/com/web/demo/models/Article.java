@@ -19,6 +19,13 @@ public class Article implements Serializable {
     private String title;
     @Column(name="category")
     private String category;
+
+    public Article(){}
+    public Article(String title, String category) {
+        this.title = title;
+        this.category = category;
+    }
+
     public long getArticleId() {
         return articleId;
     }
